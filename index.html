@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHPGen — Inicializador de proyectos PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css" />
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="logo-text">PHPGen</span>
+      </div>
+      <div class="header-pill">
+        <span class="pill-dot"></span>
+        Backend · PHP &amp; Laravel
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="hero">
+      <div class="hero-eyebrow">Herramienta de inicialización backend</div>
+      <h1 class="hero-title">
+        Tu proyecto PHP<br>
+        <span class="gradient-text">listo para el servidor</span>
+      </h1>
+      <p class="hero-desc">Genera comandos para PHP puro, Laravel, autenticación con Breeze o APIs REST. Compatible con XAMPP, Composer, MySQL, SQLite, PostgreSQL y SQL Server.</p>
+    </div>
+
+    <!-- CONFIG -->
+    <div class="card" id="config-card">
+      <div class="card-step">
+        <div class="step-num">01</div>
+        <div class="step-info">
+          <div class="step-title">Configura tu proyecto</div>
+          <div class="step-sub">Nombre, tipo, base de datos y opciones</div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="project-name">Nombre del proyecto</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            </span>
+            <input type="text" id="project-name" placeholder="mi-proyecto-php" spellcheck="false" autocomplete="off" />
+          </div>
+          <span class="field-hint">minúsculas y guiones · usado como nombre de carpeta</span>
+        </div>
+
+        <div class="field">
+          <label for="db-name">Nombre de la base de datos</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </span>
+            <input type="text" id="db-name" placeholder="mi_base_datos" autocomplete="off" />
+          </div>
+          <span class="field-hint">solo letras, números y guiones bajos</span>
+        </div>
+
+        <div class="field">
+          <label for="author-name">Autor</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <input type="text" id="author-name" placeholder="Tu nombre" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="github-user">Usuario de GitHub</label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </span>
+            <input type="text" id="github-user" placeholder="username" autocomplete="off" />
+          </div>
+        </div>
+
+        <!-- TIPO DE PROYECTO -->
+        <div class="field full">
+          <label>Tipo de proyecto</label>
+          <div class="type-grid">
+            <label class="type-card">
+              <input type="radio" name="project-type" value="php-puro" checked />
+              <div class="type-inner">
+                <div class="type-icon">🐘</div>
+                <div class="type-name">PHP Puro</div>
+                <div class="type-desc">Sin framework, estructura básica lista para XAMPP</div>
+              </div>
+              <div class="type-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="project-type" value="laravel" />
+              <div class="type-inner">
+                <div class="type-icon">🔴</div>
+                <div class="type-name">Laravel</div>
+                <div class="type-desc">Framework completo con Artisan y Eloquent ORM</div>
+              </div>
+              <div class="type-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="project-type" value="laravel-breeze" />
+              <div class="type-inner">
+                <div class="type-icon">🔐</div>
+                <div class="type-name">Laravel + Breeze</div>
+                <div class="type-desc">Laravel con autenticación lista (login y registro)</div>
+              </div>
+              <div class="type-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="project-type" value="laravel-api" />
+              <div class="type-inner">
+                <div class="type-icon">⚡</div>
+                <div class="type-name">Laravel API</div>
+                <div class="type-desc">API REST con Sanctum para autenticación por token</div>
+              </div>
+              <div class="type-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- BASE DE DATOS -->
+        <div class="field full">
+          <label>Base de datos</label>
+          <div class="db-grid">
+            <label class="db-card">
+              <input type="radio" name="db-type" value="mysql" checked />
+              <div class="db-inner">
+                <div class="db-icon">🐬</div>
+                <div class="db-name">MySQL</div>
+                <div class="db-desc">XAMPP · Puerto 3306</div>
+              </div>
+              <div class="db-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="db-card">
+              <input type="radio" name="db-type" value="sqlite" />
+              <div class="db-inner">
+                <div class="db-icon">🪶</div>
+                <div class="db-name">SQLite</div>
+                <div class="db-desc">Archivo local · Sin servidor</div>
+              </div>
+              <div class="db-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="db-card">
+              <input type="radio" name="db-type" value="pgsql" />
+              <div class="db-inner">
+                <div class="db-icon">🐘</div>
+                <div class="db-name">PostgreSQL</div>
+                <div class="db-desc">Puerto 5432 · Usuario postgres</div>
+              </div>
+              <div class="db-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="db-card">
+              <input type="radio" name="db-type" value="sqlsrv" />
+              <div class="db-inner">
+                <div class="db-icon">🪟</div>
+                <div class="db-name">SQL Server</div>
+                <div class="db-desc">Puerto 1433 · ODBC Driver</div>
+              </div>
+              <div class="db-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+            <label class="db-card">
+              <input type="radio" name="db-type" value="none" />
+              <div class="db-inner">
+                <div class="db-icon">🚫</div>
+                <div class="db-name">Sin BD</div>
+                <div class="db-desc">Proyecto sin base de datos</div>
+              </div>
+              <div class="db-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- OPCIONES EXTRA -->
+        <div class="field full">
+          <label>Opciones extra</label>
+          <div class="toggle-grid">
+            <label class="toggle-item">
+              <input type="checkbox" id="include-git" checked />
+              <div class="toggle-track"><div class="toggle-thumb"></div></div>
+              <div class="toggle-info">
+                <span class="toggle-name">Git + GitHub</span>
+                <span class="toggle-desc">Inicializa git, .gitignore y conecta al remoto</span>
+              </div>
+            </label>
+            <label class="toggle-item">
+              <input type="checkbox" id="include-readme" checked />
+              <div class="toggle-track"><div class="toggle-thumb"></div></div>
+              <div class="toggle-info">
+                <span class="toggle-name">README.md</span>
+                <span class="toggle-desc">Archivo de documentación del proyecto</span>
+              </div>
+            </label>
+            <label class="toggle-item">
+              <input type="checkbox" id="open-vscode" checked />
+              <div class="toggle-track"><div class="toggle-thumb"></div></div>
+              <div class="toggle-info">
+                <span class="toggle-name">Abrir en VS Code</span>
+                <span class="toggle-desc">Ejecuta code . al finalizar la instalación</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-footer">
+        <button class="btn-generate" id="generate-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Generar comandos
+        </button>
+      </div>
+    </div>
+
+    <!-- OUTPUT -->
+    <section class="output-section hidden" id="output-section">
+
+      <div class="info-bar" id="info-bar"></div>
+
+      <div class="card">
+        <div class="card-step">
+          <div class="step-num">02</div>
+          <div class="step-info">
+            <div class="step-title">Estructura del proyecto</div>
+            <div class="step-sub">Carpetas y archivos que se crearán</div>
+          </div>
+        </div>
+        <div class="tree-preview" id="tree-preview"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-step">
+          <div class="step-num">03</div>
+          <div class="step-info">
+            <div class="step-title">Comandos a ejecutar</div>
+            <div class="step-sub">Cópialos uno a uno o todos a la vez en PowerShell</div>
+          </div>
+          <button class="btn-outline" id="copy-all-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copiar todo
+          </button>
+        </div>
+        <div class="commands-list" id="commands-list"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-step">
+          <div class="step-num">04</div>
+          <div class="step-info">
+            <div class="step-title">.env recomendado</div>
+            <div class="step-sub">Variables de entorno para tu proyecto</div>
+          </div>
+          <button class="btn-icon" id="copy-env-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+        </div>
+        <pre class="code-block" id="env-preview"></pre>
+      </div>
+
+      <div class="card">
+        <div class="card-step">
+          <div class="step-num">05</div>
+          <div class="step-info">
+            <div class="step-title">URLs del proyecto</div>
+            <div class="step-sub">Dónde acceder a tu proyecto</div>
+          </div>
+        </div>
+        <div class="urls-grid" id="urls-grid"></div>
+      </div>
+
+      <button class="btn-ghost" id="reset-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        Nuevo proyecto
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Hecho con <span class="heart">♥</span> para el flujo <strong>PHP + Composer + Laravel + XAMPP</strong></p>
+  </footer>
+
+  <div class="toast hidden" id="toast">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    ¡Copiado!
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
