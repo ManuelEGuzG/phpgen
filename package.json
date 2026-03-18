@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpx servor src/ index.html 1234 --reload"
+    "dev": "pnpx servor src/ index.html 1234 --reload",
+    "deploy": "gh-pages -d src/ --no-history"
   },
   "keywords": [],
   "author": "Manuel",
@@ -13,6 +14,7 @@
   "packageManager": "pnpm@10.32.1",
   "type": "module",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "servor": "^4.0.2"
   }
 }
